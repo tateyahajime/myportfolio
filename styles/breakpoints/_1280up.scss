@@ -1,0 +1,100 @@
+ //1280px以上のモニタで適用
+
+
+.logo {
+  font-size: 38px;
+  height: 70px;
+  width: 550px;
+
+  &__img {
+    margin-right: 30px;
+  }
+
+  &__my {
+    margin-right: 14px;
+  }
+}
+
+.home {
+  & .main-title {
+    font-size: 70px;
+  }
+
+  & .sub-title {
+    font-size: 30px;
+  }
+}
+
+.about {
+  &__title {
+    font-size: 60px;
+  }
+  &__just {
+    font-size: 45px;
+    padding-bottom: 40px;
+  }
+  &__sub {
+    margin-bottom: 30px;
+  }
+  li {
+    margin-bottom: 30px;
+  }
+}
+
+.skill {
+  &__my {
+    font-size: 50px;
+   
+  }
+  &__type {
+    font-size: 30px;
+  }
+}
+
+.family {
+  & > h1 {
+    font-size: 50px;
+  }
+}
+
+.sons {
+  & .main-title {
+    font-size: 50px;
+  }
+}
+.zusi {
+  &__item {
+    flex-basis: 23%;
+  }
+  & .main-title {
+    font-size: 50px;
+  }
+}
+
+
+.pg {
+  .clone {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.footer {
+  & .logo {
+    font-size: 35px;
+    &__img {
+      width: 2em;
+      margin-right: 30px;
+    }
+  
+    &__my {
+      color: $cMy;
+      text-align: center;
+      margin-right: 14px;
+    }
+ }
+}
+
+.side {
+  display: block;
+}

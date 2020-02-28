@@ -1,0 +1,537 @@
+//Stylesheet: ベーススタイル
+
+body {
+  font-family: 'Krona One', 'Noto Sans JP',;
+  //fontは英語のフォントから順番にする。
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+//bootstrap spacingで調べられる↓
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lr {
+  font-size: 17px;
+}
+.font-lg {
+  font-size: 25px;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+//↓スタイルを入れたいクラスに@extendで付けたいスタイルのクラスを付けられる
+//↓メディアクエリも一緒に適用される
+.main-title {
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.sub-title {
+  @extend .font-sm;
+  color: $cSubTitle;
+  @extend .mb-sm;
+}
+
+#container {
+  transition: transform 0.5s, box-shadow 0.5s;
+  background-color: $cWhite;
+  position: relative;
+  z-index: 2;
+}
+
+// #main-content {
+//   position: relative;
+//   z-index: 0;
+// }
+
+// main {
+//   position: relative;
+//   z-index: 0;
+// }
+
+aside {
+  position: relative;
+  z-index: 100;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  height: $navHeight;
+  display: flex;
+  z-index: 5;
+
+  &__nav {
+    display: none;
+  }
+
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__ul {
+    @extend .flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  &__li {
+    
+    padding: 0;
+    margin: 10px;
+    
+    & > a {
+      text-decoration: none;
+      color: $cBlack;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend .content-width;
+  }
+
+  &.triggered {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.home {
+  width: 100%;
+  height: 50vh;
+  background-image: url(https://www.pakutaso.com/shared/img/thumb/ookawasanDSC00043_TP_V.jpg);
+  &__name {
+    text-align: center;
+    padding-top: 100px;
+
+    & .main-title {
+      font-size: 25px;
+      @extend .mb-sm;
+    }
+  }
+}
+.about {
+  height: 100%;
+  @extend .content-width;
+
+  &__title {
+    margin-top: 30px;
+    font-size: 25px;
+  }
+  &__sub {
+    margin-bottom: 10px;
+    text-align: left;
+    & > span {
+      background-color: $cMy;
+    }
+  }
+  &__just {
+    text-align: center;
+    margin-bottom: 16px;
+    & > span {
+      text-shadow: 2px 2px 2px black;
+    }
+  }
+  & li {
+    list-style: none;
+  }
+  & .ticon,
+  & .ficon {
+    color: $cBlue;
+  }
+}
+
+.skill {
+  height: 100%;
+  background-color: rgba(186, 190, 200, 0.301);
+  background-size: cover;
+  // opacity: 0.1;
+  &__inner {
+    @extend .content-width;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__type {
+    font-size: 15px;
+  }
+  &__my {
+    font-size: 25px;
+    padding-top: 30px;
+    & > span {
+      color: $cBlue;
+    }
+  }
+  &__last {
+    padding-bottom: 20px;
+  }
+}
+
+.family {
+  text-align: center;
+  & > h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+    & > span {
+      color: $cBlue;
+    }
+  }
+}
+.pg {
+  @extend .content-width;
+  @extend .mb-lg;
+  &__inner {
+    @extend .flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: $cSubTitle;
+    // background-color: rgba(81, 244, 250, 0.739);
+    // background-image: url(../images/pg2.jpeg);
+    // opacity: 0.3;
+    margin-top: 15px;
+    // position: relative;
+    // z-index: 1;
+  }
+  &__btn {
+    text-align: center;
+  }
+
+  &__img {
+    height: 300px;
+    @extend .mb-sm;
+    & > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  
+
+  &__engineer {
+    text-align: center;
+    span {
+      color: $cWhite;
+    }
+  }
+  
+  &__favorite-words {
+    color: $cWhite;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  &__texts {
+    @extend .pb-sm;
+  }
+
+  &__sub,
+  &__message {
+    color: $cWhite;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  // .img-zoom {
+  //   position: relative;
+  //   z-index: -1;
+  // }
+
+  
+}
+
+.sons {
+  @extend .mb-lg;
+  &__container1 {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90%;
+      // background-color: $cBlue;
+      background-image: url(../images/see2.jpeg);
+      background-size: cover;
+      opacity: 0.5;
+      z-index: -1;
+    }
+  }
+  &__title {
+    @extend .font-md;
+    @extend .mb-sm;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  &__btn {
+    text-align: center;
+    flex-basis: 100%;
+    @extend .mb-lg;
+  }
+
+  &__inner {
+   @extend .flex;
+   @extend .content-width;
+  //  justify-content: space-between;
+  }
+  &__item {
+    overflow: hidden;
+  }
+
+  &__shadow {
+    transition: box-shadow 1ms linear 0.8s;
+  }
+
+  & .inview {
+    box-shadow: -6px -4px 9px 0px $cBlack;
+  }
+  & .main-title {
+    text-align: center;
+    & > span {
+      color: $cBlue;
+    }
+  }
+  & .sub-title {
+    text-align: center
+  }
+  
+}
+
+.zusi {
+
+  &__inner {
+    padding-bottom: 10px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90%;
+      // background-color: $cBlue;
+      background-image: url(../images/see.jpeg);
+      background-size: cover;
+      opacity: 0.5;
+      z-index: -1;
+    }
+  }
+  &__container {
+    @extend .flex;
+    @extend .content-width;
+    @extend .pb-sm;
+  }
+  &__title {
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+  &__btn {
+    text-align: center;
+    flex-basis: 100%;
+    @extend .mb-lg;
+    
+  }
+  &__img {
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    
+    transition: box-shadow 1ms linear 0.8s;
+
+    & > img {
+      // object-fit: cover;
+      //写真サイズが小さくなっても全体が映る
+      // object-fit: 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.inview {
+      box-shadow: 8px 3px 10px $cBlack;
+    }
+  }
+
+  &__header {
+    @extend .content-width;
+  }
+
+  & .main-title {
+    text-align: center;
+    & > span {
+      color: $cBlue;
+    }
+  }
+  & .sub-title {
+    text-align: center;
+  }
+}
+
+
+.logo {
+  font-size: 17px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  &__img {
+    width: 2em;
+    margin-right: 10px;
+    box-shadow: 3px 7px 2px black;
+  }
+  &__my {
+    color: $cMy;
+    margin-right: 10px;
+    text-shadow: 2px 2px 1px black;
+  }
+  &__portfolio {
+    width: 420px;
+  }
+
+}
+
+
+.footer {
+  padding:60px 0;
+  @extend .content-width;
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__ul {
+    @extend .flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  &__li {
+    
+    padding: 0;
+    margin: 10px;
+    
+    & > a {
+      text-decoration: none;
+    }
+  }
+
+  & .logo {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__img {
+      width: 2em;
+      margin-right: 10px;
+    }
+  
+    &__my {
+      color: $cMy;
+      text-align: center;
+      margin-right: 10px;
+    }
+  
+  }
+  
+  
+}
+
+.mobile-menu {
+  &__link {
+    color: $cBlue;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .main-title {
+    font-size: 20px;
+    display: block;
+  }
+}
+
+.side {
+  display: none;
+  position: fixed;
+  top: 70%;
+  transform: translateY(-50%);
+
+  &.left {
+    left: 50px;
+
+    & .side__inner {
+      transform: rotate(-90deg);
+      transform-origin: top left;
+
+      & a {
+        text-decoration: none !important;
+      }
+    }
+  }
+
+  &.right {
+    right: 50px;
+
+    & .side__inner {
+      transform: rotate(90deg);
+      transform-origin: top right;
+
+      // & > span {
+      //   color: $cBlack;
+      // }
+    }
+  }
+  & .fab,
+  & .icon {
+    color: $cBlack;
+  }
+
+  & .fa-facebook-square {
+    margin-left: 15px;
+  }
+}
+

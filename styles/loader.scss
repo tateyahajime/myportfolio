@@ -1,0 +1,73 @@
+@import "modules/variables";
+
+
+.pace-done #global-container {
+  transition: opacity 1s;
+  opacity: 1;
+}
+.pace-running #global-container {
+  opacity: 0;
+}
+
+.pace {
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  // overflow: hidden;
+}
+
+.pace .pace-progress {
+  transform: none !important;
+  text-align: center;
+}
+
+.pace .pace-progress:after {
+  content: attr(data-progress-text);
+  display: block;
+  font-weight: 100;
+  font-size: 2.7em;
+  font-family: "Helvetica Neue", "Yu Gothic", "Meiryo", "sans-serif";
+  color: $cSubTitle;
+}
+
+.pace.pace-inactive {
+  display: none;
+}
+
+.pace-progress-inner {
+  width: 50px;
+  height: 50px;
+  background-color: $cRooder;
+  // border: 1px solid purple;
+  margin: 0 auto;
+  animation: sk-rotateplane2 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  // animation-fill-mode: forwards;
+  // @include animation(
+  //   $name: sk-rotateplane2,
+  //   $duration: 1.2s,
+  //   $iteration-count: infinite
+  //   );
+
+}
+
+@keyframes sk-rotateplane2 {
+  0% {
+    transform: perspective(120px) rotateX(0);
+  }
+
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0);
+  }
+
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
